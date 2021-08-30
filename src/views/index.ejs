@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Image</title>
+    <meta name="description" content="360&deg; Image - A-Frame">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky src="assets/map-360.jpg" rotation="0 -130 0"></a-sky>
+
+      <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5"
+              rotation="0 15 0"></a-text>
+
+      <a-circle data-name="usa-newyork" radius="0.09" position="-1.5 1.95 -5" rotation="0 0 0" scale="" color="#F44336" event-set__enter="_event: mouseenter; _target: #bg; color: #F44336"></a-circle>
+
+      <a-circle data-name="usa-chicago" radius="0.09" position="-2.35 2.1 -5" rotation="0 0 0" scale="" color="#F44336" event-set__enter="_event: mouseenter; _target: #bg; color: #F44336"></a-circle>
+
+      <a-camera>
+        <!--<a-cursor></a-cursor>-->
+        <a-entity camera look-controls mouse-cursor></a-entity>
+      </a-camera>
+    </a-scene>
+    
+    <script>
+      AFRAME.registerComponent("click-listener", {
+        init: function() {
+          this.el.addEventListener("click", function(e) {
+            console.log()
+            
+            });
+          
+          }
+      });
+    </script>
+
+  </body>
+</html>
